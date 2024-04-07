@@ -1,26 +1,22 @@
-name: building and formatting on PR
-on: 
-    pull_request:
-      branches:
-          - '**'
+name: Build on PR
 
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
-
   build:
-
-    name: Perfoms building.
     runs-on: ubuntu-latest
-    steps: 
-      - name: Checking the repository
-        uses: actions/checkout@v3
-
+    steps:
+      - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: "20"
 
-      - name: install dependecies
-        run: npm install 
+      - name: Install Dependencies
+        run: npm install
 
-      -name: building the app
-        run : npm run build 
-
+      - name: Run Build
+        run: npm run build
