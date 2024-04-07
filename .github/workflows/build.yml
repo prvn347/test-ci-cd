@@ -2,13 +2,11 @@ name: building and formatting on PR
 on: 
     pull_request:
       branches:
-          - '**'
+          - master
 
 
 jobs:
-
   build:
-
     name: Perfoms building.
     runs-on: ubuntu-latest
     steps: 
@@ -21,6 +19,6 @@ jobs:
       - name: install dependecies
         run: npm install 
 
-      -name: building the app
+      - name: building the app
         run : npm run build 
 
