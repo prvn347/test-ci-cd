@@ -13,6 +13,7 @@ pnpm devdfsjs
 # or
 bun dev
 ```
+chcekci chekci
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
