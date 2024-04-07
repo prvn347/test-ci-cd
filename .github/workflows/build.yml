@@ -1,0 +1,26 @@
+name: building and formatting on PR
+on: 
+    pull_request:
+      branches:
+          - '**'
+
+
+jobs:
+
+  build:
+
+    name: Perfoms building.
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checking the repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+
+      - name: install dependecies
+        run: npm install 
+
+      -name: building the app
+        run : npm run build 
+
