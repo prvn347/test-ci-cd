@@ -1,4 +1,8 @@
-name: Build on PR
+name: building and formatting on PR
+on: 
+    pull_request:
+      branches:
+          - master
 
 on:
   pull_request:
@@ -7,6 +11,7 @@ on:
 
 jobs:
   build:
+    name: Perfoms building.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,8 +20,11 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install Dependencies
-        run: npm install
+      - name: install dependecies
+        run: npm install 
+
+      - name: building the app
+        run : npm run build 
 
       - name: Run Build
         run: npm run build
